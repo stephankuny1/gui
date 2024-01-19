@@ -1,1 +1,31 @@
-<h1>it works</h1>
+<h1>it works!!!</h1>
+{{ data.gateway.currentpowerconsumption }}
+{{ data.gateway.currentGridPower }}
+{{ data.gateway.currentPvGeneration }}
+
+<div *ngFor="let device of data.gateway.Devices">
+  <app-smart-device
+    [name]="getName(data.infodata, device)"
+    [connected]="device.activeDevice"
+    [type]="getSmartPlugType(data.infodata, device)"
+    [power]="device.currentPower || 0"
+  ></app-smart-device>
+</div>
+<div *ngFor="let device of data.gateway.Devices">
+  <h1>
+
+
+    <!--    <mat-icon class="active" *ngIf="device.signal==='connected'">link</mat-icon>-->
+    <!--    <mat-icon class="inactive" *ngIf="device.signal!=='connected'">link_off</mat-icon>-->
+    <mat-icon class="active" *ngIf="device.activeDevice===1">play_circle</mat-icon>
+    <mat-icon class="inactive" *ngIf="device.activeDevice===0">dangerous</mat-icon>
+    <mat-icon class="active" *ngIf="getSmartPlugType(data.infodata, device)===0">pause</mat-icon>
+    <mat-icon class="active" *ngIf="getSmartPlugType(data.infodata, device)===1">power_settings_new</mat-icon>
+    <mat-icon class="inactive" *ngIf="getSmartPlugType(data.infodata, device)===2">disabled_by_default</mat-icon>
+    <mat-icon class="active" *ngIf="getSmartPlugType(data.infodata, device)===3">solar_power</mat-icon>
+    <mat-icon class="active" *ngIf="getSmartPlugType(data.infodata, device)===4">solar_power</mat-icon>
+    <mat-icon class="inactive" *ngIf="getSmartPlugType(data.infodata, device)===5">link_off</mat-icon>
+    {{ getName(data.infodata, device)}}: {{(device.currentPower || 0)}} W
+  </h1>
+</div>
+
