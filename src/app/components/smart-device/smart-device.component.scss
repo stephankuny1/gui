@@ -1,0 +1,28 @@
+.sd-frame {
+  height:50px;
+  display: grid;
+  grid-template-columns:250px 150px 150px 150px;
+  grid-template-rows: 50px;
+}
+
+.first-column {
+  grid-column: 1 / 3;
+  grid-row: 1/2;
+  border: 1px solid red;
+}
+
+.second-column {
+  grid-column: 2/3;
+  grid-row: 1 /2;
+  border: 1px solid blue;
+}
+.third-column {
+  grid-column: 3 / 3;
+  grid-row: 1 /2;
+  border: 1px solid green;
+}
+.fourth-column {
+  grid-column: 4 / 4;
+  grid-row: 1 /2;
+  border: 1px solid black;
+}

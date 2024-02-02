@@ -11,6 +11,7 @@ export class SmartDeviceComponent implements OnInit {
   @Input() connected: string = '';
   @Input() power: number = 0;
   @Input() type: number = 0;
+  @Input() temperature: number = 0;
 
   constructor() {
   }

@@ -1,3 +1,10 @@
-<p>{{name}}</p>
-<p>{{power}}</p>
-<mat-icon>{{getIcon()}}</mat-icon>
+<div class="sd-frame">
+  <span class="first-column">{{name}}</span>
+  <span class="second-column">{{power}} W</span>
+  <div class="third-column">
+    <mat-icon class="third-column">{{getIcon()}}</mat-icon>
+  </div>
+  <div class="fourth-column">
+    <div *ngIf="temperature">{{temperature}}°C</div>
+  </div>
+</div>
