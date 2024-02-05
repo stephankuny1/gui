@@ -13,8 +13,7 @@ export class DataService {
   public getPvaData(): Observable<any> {
     const headers = new HttpHeaders()
      // .set("access-control-allow-origin", "http://localhost:8099");
-
-
     return this.http.get("http://192.168.1.150:8098/api/data", { headers });
+
   }
 }

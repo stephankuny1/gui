@@ -1,0 +1,9 @@
+<div *ngIf="data.gateway">
+  <div class="blue">Verbrauch: {{ data.gateway.currentpowerconsumption }} W</div>
+
+  <div
+    [ngClass]="data.gateway.currentGridPower>0 ? 'red':'green'">{{data.gateway.currentGridPower > 0 ? 'Bezug' : 'Einspeisung'}}
+    : {{ abs(data.gateway.currentGridPower) }} W
+  </div>
+  <div class="orange">Akt. Solarleistung: {{ data.gateway.currentPvGeneration }} W</div>
+</div>

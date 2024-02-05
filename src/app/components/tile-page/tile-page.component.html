@@ -1,0 +1,9 @@
+<div class="grid" *ngIf="data && data.gateway">
+  <div *ngFor="let device of data.gateway.Devices">
+    <app-tile
+      *ngIf="getDeviceInfo(data.infodata, device)!.device_type === 'device'"
+      [header]="getName(data.infodata, device)"
+      [power]="device.currentPower || 0"
+    ></app-tile>
+  </div>
+</div>

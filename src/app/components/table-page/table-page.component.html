@@ -1,0 +1,13 @@
+<p>table-page works!</p>
+<div *ngIf="data && data.gateway">
+  <div *ngFor="let device of data.gateway.Devices">
+    <app-smart-device
+      *ngIf="getDeviceInfo(data.infodata, device)!.device_type === 'device'"
+      [name]="getName(data.infodata, device)"
+      [connected]="device.activeDevice"
+      [type]="getSmartPlugType(data.infodata, device)"
+      [power]="device.currentPower || 0"
+      [temperature]="device.currentWaterTemp"
+    ></app-smart-device>
+  </div>
+</div>

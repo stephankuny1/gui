@@ -6,17 +6,31 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatIconModule} from "@angular/material/icon";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SmartDeviceComponent } from './components/smart-device/smart-device.component';
+import { TileComponent } from './components/tile/tile.component';
+import {MatButtonModule} from "@angular/material/button";
+import { HeaderComponent } from './components/header/header.component';
+import { PvOverviewComponent } from './components/pv-overview/pv-overview.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { TilePageComponent } from './components/tile-page/tile-page.component';
+import { TablePageComponent } from './components/table-page/table-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SmartDeviceComponent
+    SmartDeviceComponent,
+    TileComponent,
+    HeaderComponent,
+    PvOverviewComponent,
+    ErrorPageComponent,
+    TilePageComponent,
+    TablePageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     MatIconModule,
+    MatButtonModule,
     BrowserAnimationsModule,
   ],
   providers: [],

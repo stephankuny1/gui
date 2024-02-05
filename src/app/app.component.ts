@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {DataService} from "./components/data.service";
 import {interval} from "rxjs";
 
+
 export interface INFO_DATA {
   _id: string,
   tag: any
@@ -14,21 +15,32 @@ export interface INFO_DATA {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  viewMode: boolean = false;
   title = 'PVA MONITORING';
   numbers = interval(1000);
 
   n = this.numbers.subscribe(x => this.getData())
-  data: any;
+  data: any | undefined;
   constructor(private dataService: DataService) {
-
-   // this.getData()
+    this.getData()
   }
 
   getData() {
-    this.dataService.getPvaData().subscribe((data) => {
-      console.log('data', data);
-      this.data = data;
-    });
+    try {
+      this.dataService.getPvaData().subscribe((data) => {
+        console.log('fetch data', data);
+        this.data = data;
+      },
+      (error) => {
+        console.log('error occured', error);
+        this.data = undefined;
+      }
+      );
+
+    } catch (e) {
+      console.log('ERROR');
+    }
   }
 
 
@@ -42,5 +54,9 @@ export class AppComponent {
 
   getSmartPlugType(infoData: INFO_DATA[], device: any) {
     return infoData.filter(x=> x._id === device._id).pop()!.data!.smartPlugChargingType!;
+  }
+
+  abs(number: number) {
+    return Math.abs(number);
   }
 }
