@@ -1,9 +1,15 @@
 <div class="main">
-  <app-error-page *ngIf="pvData === undefined"></app-error-page>
-  <div *ngIf=" pvData">
-    <app-header [pvData]="pvData" [viewMode]="viewMode" (viewChanged)="viewMode=!viewMode"></app-header>
-<!--    <app-pv-overview *ngIf="data" [data]="data"></app-pv-overview>-->
-    <app-table-page *ngIf="viewMode && pvData" [data]="pvData!.devices"></app-table-page>
-    <app-tile-page class="tile-page" [deviceData]="pvData!.devices"></app-tile-page>
-  </div>
+  @if (pvData === undefined) {
+    <app-error-page></app-error-page>
+  }
+  @if ( pvData) {
+    <div>
+      <app-header [pvData]="pvData" [viewMode]="viewMode" (viewChanged)="viewMode=!viewMode"></app-header>
+      <!--    <app-pv-overview *ngIf="data" [data]="data"></app-pv-overview>-->
+      @if (viewMode && pvData) {
+        <app-table-page [data]="pvData!.devices"></app-table-page>
+      }
+      <app-tile-page class="tile-page" [deviceData]="pvData!.devices"></app-tile-page>
+    </div>
+  }
 </div>

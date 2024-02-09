@@ -5,6 +5,8 @@
     <mat-icon class="third-column">{{getIcon()}}</mat-icon>
   </div>
   <div class="fourth-column">
-    <div *ngIf="temperature">{{temperature}}°C</div>
+    @if (temperature) {
+      <div>{{temperature}}°C</div>
+    }
   </div>
 </div>

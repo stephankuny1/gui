@@ -1,19 +1,21 @@
 <div class="frame">
-  <div class="overview-grid row-one" *ngIf="data">
-
-    <app-data-item cssClass="blue" class="first-column" [value]="data.currentpowerconsumption" [unit]="'W'"
-                   [description]="'Verbrauch'"></app-data-item>
-    <app-data-item [cssClass]="data.currentGridPower>0 ? 'red':'green'" class="second-column"
-                   [value]="abs(data.currentGridPower)" [unit]="'W'"
-                   [description]="data.currentGridPower > 0 ? 'Bezug' : 'Einspeisung'"></app-data-item>
-    <app-data-item cssClass="orange" class="third-column" [value]="data.currentPvGeneration" [unit]="'W'"
-                   [description]="'aktuelle Solarleistung'"></app-data-item>
-  </div>
-  <div class="overview-grid row-two" *ngIf="data">
-
-    <app-data-item cssClass="blue" class="first-column" [value]="getBoilerTemp()" [unit]="'°C'"
-                   [description]="'Boiler-Temperatur'"></app-data-item>
-    <app-data-item cssClass="yellow" class="third-column" [value]="data.availablePower" [unit]="'W'"
-                   [description]="'Max. verfügbare Leistung'"></app-data-item>
-  </div>
+  @if (data) {
+    <div class="overview-grid row-one">
+      <app-data-item cssClass="blue" class="first-column" [value]="data.currentpowerconsumption" [unit]="'W'"
+      [description]="'Verbrauch'"></app-data-item>
+      <app-data-item [cssClass]="data.currentGridPower>0 ? 'red':'green'" class="second-column"
+        [value]="abs(data.currentGridPower)" [unit]="'W'"
+      [description]="data.currentGridPower > 0 ? 'Bezug' : 'Einspeisung'"></app-data-item>
+      <app-data-item cssClass="orange" class="third-column" [value]="data.currentPvGeneration" [unit]="'W'"
+      [description]="'aktuelle Solarleistung'"></app-data-item>
+    </div>
+  }
+  @if (data) {
+    <div class="overview-grid row-two">
+      <app-data-item cssClass="blue" class="first-column" [value]="getBoilerTemp()" [unit]="'°C'"
+      [description]="'Boiler-Temperatur'"></app-data-item>
+      <app-data-item cssClass="yellow" class="third-column" [value]="data.availablePower" [unit]="'W'"
+      [description]="'Max. verfügbare Leistung'"></app-data-item>
+    </div>
+  }
 </div>

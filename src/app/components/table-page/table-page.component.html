@@ -1,13 +1,18 @@
 <p>table-page works!</p>
-<div *ngIf="data && data">
-  <div *ngFor="let device of data">
-    <app-smart-device
-      *ngIf="device"
-      [name]="device.name"
-      [connected]="device.activeDevice"
-      [type]="device.smartPlugChargingType"
-      [power]="device.currentPower || 0"
-      [temperature]="device.currentWaterTemp"
-    ></app-smart-device>
+@if (data && data) {
+  <div>
+    @for (device of data; track device) {
+      <div>
+        @if (device) {
+          <app-smart-device
+            [name]="device.name"
+            [connected]="device.activeDevice"
+            [type]="device.smartPlugChargingType"
+            [power]="device.currentPower || 0"
+            [temperature]="device.currentWaterTemp"
+          ></app-smart-device>
+        }
+      </div>
+    }
   </div>
-</div>
+}
