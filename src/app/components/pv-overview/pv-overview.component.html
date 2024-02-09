@@ -1,9 +1,19 @@
-<div *ngIf="data.gateway">
-  <div class="blue">Verbrauch: {{ data.gateway.currentpowerconsumption }} W</div>
+<div class="frame">
+  <div class="overview-grid row-one" *ngIf="data">
 
-  <div
-    [ngClass]="data.gateway.currentGridPower>0 ? 'red':'green'">{{data.gateway.currentGridPower > 0 ? 'Bezug' : 'Einspeisung'}}
-    : {{ abs(data.gateway.currentGridPower) }} W
+    <app-data-item cssClass="blue" class="first-column" [value]="data.currentpowerconsumption" [unit]="'W'"
+                   [description]="'Verbrauch'"></app-data-item>
+    <app-data-item [cssClass]="data.currentGridPower>0 ? 'red':'green'" class="second-column"
+                   [value]="abs(data.currentGridPower)" [unit]="'W'"
+                   [description]="data.currentGridPower > 0 ? 'Bezug' : 'Einspeisung'"></app-data-item>
+    <app-data-item cssClass="orange" class="third-column" [value]="data.currentPvGeneration" [unit]="'W'"
+                   [description]="'aktuelle Solarleistung'"></app-data-item>
   </div>
-  <div class="orange">Akt. Solarleistung: {{ data.gateway.currentPvGeneration }} W</div>
+  <div class="overview-grid row-two" *ngIf="data">
+
+    <app-data-item cssClass="blue" class="first-column" [value]="getBoilerTemp()" [unit]="'°C'"
+                   [description]="'Boiler-Temperatur'"></app-data-item>
+    <app-data-item cssClass="yellow" class="third-column" [value]="data.availablePower" [unit]="'W'"
+                   [description]="'Max. verfügbare Leistung'"></app-data-item>
+  </div>
 </div>

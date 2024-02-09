@@ -1,0 +1,14 @@
+.header-grid {
+  display: grid;
+  grid-template-columns: 0px auto 0px;
+  grid-gap: 0px;
+  padding: 0px;
+}
+.left {
+  grid-column: 2/2;
+}
+.icon {
+  grid-column: 3/3;
+  justify-self: end;
+  //align-self: center;
+}

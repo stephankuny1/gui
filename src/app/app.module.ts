@@ -13,6 +13,7 @@ import { PvOverviewComponent } from './components/pv-overview/pv-overview.compon
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { TilePageComponent } from './components/tile-page/tile-page.component';
 import { TablePageComponent } from './components/table-page/table-page.component';
+import { DataItemComponent } from './components/pv-overview/components/data-item/data-item.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { TablePageComponent } from './components/table-page/table-page.component
     PvOverviewComponent,
     ErrorPageComponent,
     TilePageComponent,
-    TablePageComponent
+    TablePageComponent,
+    DataItemComponent
   ],
   imports: [
     BrowserModule,

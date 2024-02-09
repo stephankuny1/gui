@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {INFO_DATA} from "../../app.component";
+import {EXTENDET_DATA, INFO_DATA, PV_DATA} from "../../app.component";
 
 @Component({
   selector: 'app-table-page',
@@ -8,7 +8,7 @@ import {INFO_DATA} from "../../app.component";
 })
 export class TablePageComponent implements OnInit {
 
-  @Input() data: any | undefined;
+  @Input() data: EXTENDET_DATA[] | undefined;
 
   constructor() { }
 

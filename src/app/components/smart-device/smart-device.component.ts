@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class SmartDeviceComponent implements OnInit {
 
   @Input() name: string = '';
-  @Input() connected: string = '';
+  @Input() connected: number = 0;
   @Input() power: number = 0;
   @Input() type: number = 0;
   @Input() temperature: number = 0;

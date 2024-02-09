@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {EXTENDET_DATA, PV_DATA} from "../../app.component";
 
 @Component({
   selector: 'app-pv-overview',
@@ -7,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PvOverviewComponent implements OnInit {
 
-  @Input() data: any | undefined;
+  @Input() data: PV_DATA | undefined;
 
   constructor() { }
 
@@ -16,5 +17,17 @@ export class PvOverviewComponent implements OnInit {
 
   abs(number: number) {
     return Math.abs(number);
+  }
+
+
+  getBoilerTemp() {
+
+    const temp = this.data?.devices.filter(x => x.currentWaterTemp !== undefined).pop();
+
+    if (temp) {
+
+      console.log('temp:', temp.currentWaterTemp);
+      return temp.currentWaterTemp
+    } else return 0
   }
 }

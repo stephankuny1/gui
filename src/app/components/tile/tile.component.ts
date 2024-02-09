@@ -8,7 +8,10 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TileComponent implements OnInit {
 
   @Input() header = '';
-  @Input() power = undefined;
+  @Input() power: number | undefined = undefined;
+  @Input() icon = 'pool'
+  @Input() isActive = false;
+  @Input() isConnected = false;
 
   constructor() { }
 

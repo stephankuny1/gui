@@ -1,9 +1,14 @@
-<div class="grid" *ngIf="data && data.gateway">
-  <div *ngFor="let device of data.gateway.Devices">
+<button *ngIf="false" class="icon" mat-mini-fab color="primary">
+  <mat-icon>refresh</mat-icon>
+</button>
+<div class="grid" *ngIf="deviceData">
+  <div *ngFor="let device of deviceData">
     <app-tile
-      *ngIf="getDeviceInfo(data.infodata, device)!.device_type === 'device'"
-      [header]="getName(data.infodata, device)"
-      [power]="device.currentPower || 0"
+      [header]="device.name"
+      [power]="device.currentPower"
+      [isActive]="device.activeDevice===1"
+      [icon]="device.notes"
+      [isConnected] = "device.signal !== null && device.signal === 'connected'"
     ></app-tile>
   </div>
 </div>

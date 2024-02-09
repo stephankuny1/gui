@@ -1,4 +1,15 @@
-
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2px;
+  padding: 10px;
+}
+.row-one {
+  background-color: #202020;
+}
+.row-two  {
+ background-color: #303030;
+}
 .red {
   color: red;
 }
@@ -13,4 +24,16 @@
 
 .orange {
   color: orange;
+}
+
+.first-column {
+  grid-column: 1/1;
+}
+
+.second-column {
+  grid-column: 2/2;
+}
+
+.third-column {
+  grid-column: 3/3;
 }

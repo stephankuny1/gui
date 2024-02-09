@@ -1,8 +1,8 @@
-<div class="tile">
-  <div class="text">{{ header }}</div>
-  <div class="frame">
-    <mat-icon class="icon">home</mat-icon>
+<div class="tile" >
+  <div class="text" [ngClass]="isConnected?'connected':'not-connected'">{{ header }}</div>
+  <div class="frame" [ngClass]="isActive ?'active': 'inactive'">
+    <mat-icon class="icon" [ngClass]="isConnected? '':'not-connected'">{{ icon }}</mat-icon>
   </div>
 
-  <div>{{ power }} W</div>
+  <div>{{ isConnected ? power + 'W' : '.' }}</div>
 </div>

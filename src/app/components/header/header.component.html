@@ -1,4 +1,6 @@
-<h1>PVA Übersicht</h1>
-<button mat-mini-fab color="primary" (click)="viewChanged.emit(viewMode)">
-  <mat-icon>format_list_bulleted</mat-icon>
-</button>
+<div class="header-grid">
+  <app-pv-overview class="left" [data]="pvData"></app-pv-overview>
+<!--  <button class="icon" mat-mini-fab color="primary" (click)="viewChanged.emit(viewMode)">-->
+<!--    <mat-icon>format_list_bulleted</mat-icon>-->
+<!--  </button>-->
+</div>
