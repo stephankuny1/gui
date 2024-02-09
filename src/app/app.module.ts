@@ -7,7 +7,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SmartDeviceComponent } from './components/smart-device/smart-device.component';
 import { TileComponent } from './components/tile/tile.component';
-import {MatButtonModule} from "@angular/material/button";
+import {MatLegacyButtonModule as MatButtonModule} from "@angular/material/legacy-button";
 import { HeaderComponent } from './components/header/header.component';
 import { PvOverviewComponent } from './components/pv-overview/pv-overview.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
