@@ -1,9 +1,19 @@
+//.overview-grid {
+//  display: flex;
+//  //grid-template-columns: repeat(3, 1fr);
+//  //grid-gap: 2px;
+//  padding: 5px 10px 0;
+//  justify-content: space-between;
+//  //align-content: space-around
+//
+//}
 .overview-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2px;
   padding: 10px;
 }
+
 .row-one {
   background-color: #202020;
 }

@@ -1,8 +1,8 @@
-<div class="tile" >
-  <div class="text" [ngClass]="isConnected?'connected':'not-connected'">{{ header }}</div>
-  <div class="frame" [ngClass]="isActive ?'active': 'inactive'">
-    <mat-icon class="icon" [ngClass]="isConnected? '':'not-connected'">{{ icon }}</mat-icon>
+<div (click)="onDetails()" class="tile" *ngIf="device !== undefined" >
+  <div class="text" [ngClass]="isConnected() ? 'connected' : 'not-connected'">{{ device?.name }}</div>
+  <div class="frame" [ngClass]="device?.activeDevice === 1 ?'active': 'inactive'">
+    <mat-icon class="icon" [ngClass]="isConnected() ? '':'not-connected'">{{ device?.notes }}</mat-icon>
   </div>
 
-  <div>{{ isConnected ? power + 'W' : '.' }}</div>
+  <div>{{ isConnected() ? device!.currentPower + 'W' : '.' }}</div>
 </div>

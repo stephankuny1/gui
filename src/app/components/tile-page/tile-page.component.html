@@ -8,11 +8,7 @@
     @for (device of deviceData; track device) {
       <div>
         <app-tile
-          [header]="device.name"
-          [power]="device.currentPower"
-          [isActive]="device.activeDevice===1"
-          [icon]="device.notes"
-          [isConnected] = "device.signal !== null && device.signal === 'connected'"
+          [device]="device"
         ></app-tile>
       </div>
     }

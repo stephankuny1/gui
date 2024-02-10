@@ -1,16 +1,21 @@
 .frame {
   text-align: center;
-  //background-color: #101010;
+  width:220px;
+  //padding-left:20px;
+  //padding-right:20px;
 }
 .description {
   font-size: 0.8em;
   color: lightblue;
+  //text-align: right;
+  //padding-left:20px;
 }
 
 .value {
   font-size: 3.0em;
   color: white;
   font-weight: bold;
+  //text-align: right;
 }
 
 .green {
